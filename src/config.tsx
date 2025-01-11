@@ -7,7 +7,7 @@ const en = {
   location: "Hong Kong",
   locationLink: "https://maps.app.goo.gl/BNSJUVybj1jgwiY48",
   description:
-    "Software Engineer. I enjoy coding, photographing and strength training.",
+    "Software Engineer. I enjoy thinking, coding, photographing and strength training.",
   summary:
     "After graduating in 2022, I have been working in software development. I hope to do something interesting and having some unforgettable memories.",
   // avatarUrl: "/me.png",
@@ -143,7 +143,7 @@ const zh = {
   url: "https://sunguoqi.com",
   location: "香港",
   locationLink: "https://maps.app.goo.gl/BNSJUVybj1jgwiY48",
-  description: "喜歡寫代碼、攝影、旅行、重量訓練～",
+  description: "喜歡思考；寫代碼、攝影、旅行、重量訓練～",
   summary:
     "自 2022 年畢業後，一直從事代碼開發工作。希望能做一些有趣的事情，並留下一些難忘的回憶~",
   // avatarUrl: "/me.png",
