@@ -1,6 +1,5 @@
 import clsx from "clsx"
 import { useLocale, useTranslations } from "next-intl"
-import Link from "next/link"
 import Markdown from "react-markdown"
 import { AwesomeCard } from "~/components/awesome-card"
 import { ProjectCard } from "~/components/project-card"
@@ -9,7 +8,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar"
 import { Badge } from "~/components/ui/badge"
 import BlurFade from "~/components/ui/blur-fade"
 import BlurFadeText from "~/components/ui/blur-fade-text"
-import { TweetCard } from "~/components/ui/tweet-card"
 import { getLocaleData } from "~/config"
 
 const BLUR_FADE_DELAY = 0.03
@@ -287,7 +285,7 @@ export default function Page() {
           style={{ border: "none" }}
         />
       </section> */}
-      <section id="contact">
+      {/* <section id="contact">
         <div className="grid w-full items-center justify-center gap-4 px-4 py-12 text-center md:px-6">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
             <div className="space-y-3">
@@ -319,7 +317,7 @@ export default function Page() {
             </div>
           </BlurFade>
         </div>
-      </section>
+      </section> */}
     </main>
   )
 }

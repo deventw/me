@@ -110,6 +110,28 @@ const en = {
       image: "/swingfridge.png",
       video: "",
     },
+    {
+      title: "Astro Air Bento",
+      href: "https://blog.deven.tw",
+      dates: "Dec 2024 - Now",
+      active: true,
+      description: "Bento-styled, minimal, personal blog theme for Astro",
+      technologies: ["Astro", "React", "Typescript", "TailwindCSS"],
+      links: [
+        {
+          type: "Website",
+          href: "https://astro-air-bento.netlify.app/en/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/deventw/astro-air-bento",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/air-bento.png",
+      video: "",
+    },
   ],
   awesome: [
     {
@@ -208,7 +230,7 @@ const zh = {
     {
       title: "叫醒冰箱 Pro",
       href: "https://apps.apple.com/hk/app/swing-fridge-pro/id6670784659?l=en-GB",
-      dates: "Mar 2024 - Now",
+      dates: "2024.03 - Now",
       active: true,
       description:
         "一個簡約設計的 iOS APP，管理你的雪櫃，確保食物新鮮，減少浪費",
@@ -223,14 +245,25 @@ const zh = {
       image: "/swingfridge.png",
       video: "",
     },
+    {
+      title: "Astro Air Bento",
+      href: "https://blog.deven.tw",
+      dates: "2024.12 - Now",
+      active: true,
+      description: "Bento 簡約風格 - Astro 部落格主題",
+      technologies: ["Astro", "React", "Typescript", "TailwindCSS"],
+      links: en.projects[1]?.links,
+      image: "/blog.png",
+      video: "",
+    },
   ],
   awesome: [
     {
       title: "數字華容道",
-      dates: "Dec 2024",
+      dates: "2024.12",
       location: "🌍",
       description:
-        "A fun and challenging puzzle by arrange numbered tiles in the correct order!",
+        "一個有趣且具挑戰性的謎題，透過將編號的方塊按正確的順序排列！",
       image: "/number-klotski.jpeg",
       mlh: "",
       links: [
