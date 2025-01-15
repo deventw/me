@@ -162,7 +162,7 @@ const en = {
 const zh = {
   name: "DevenTW",
   slogan: "我思故我在",
-  url: "https://sunguoqi.com",
+  url: "https://deven.tw",
   location: "香港",
   locationLink: "https://maps.app.goo.gl/BNSJUVybj1jgwiY48",
   description: "喜歡思考；寫代碼、攝影、旅行、重量訓練～",
