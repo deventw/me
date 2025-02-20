@@ -1,5 +1,6 @@
 import clsx from "clsx"
 import { useLocale, useTranslations } from "next-intl"
+import Link from "next/link"
 import Markdown from "react-markdown"
 import { AwesomeCard } from "~/components/awesome-card"
 import { ProjectCard } from "~/components/project-card"
@@ -41,12 +42,14 @@ export default function Page() {
                 text={DATA.description}
               />
             </div>
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.name[0]}</AvatarFallback>
-              </Avatar>
-            </BlurFade>
+            <Link href={DATA.contact.social.GitHub.url ?? "#"} target="_blank">
+              <BlurFade delay={BLUR_FADE_DELAY}>
+                <Avatar className="size-28">
+                  <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+                  <AvatarFallback>{DATA.name[0]}</AvatarFallback>
+                </Avatar>
+              </BlurFade>
+            </Link>
           </div>
         </div>
       </section>
@@ -64,19 +67,6 @@ export default function Page() {
           >
             {DATA.summary}
           </Markdown>
-          {/* {locale === "zh" && (
-            <div className="my-4 flex font-sans text-sm text-muted-foreground">
-              <div className="w-1 bg-gray-200 dark:bg-gray-700/80" />
-              <span className="ml-2">创业太难了，跪求路过的老板收留，</span>
-              <Link
-                href="https://rxresu.me/sunguoqi/public"
-                className="text-blue-500"
-                data-umami-event="view-my-resume"
-              >
-                <u>我的简历</u>
-              </Link>
-            </div>
-          )} */}
         </BlurFade>
       </section>
       {/*  */}

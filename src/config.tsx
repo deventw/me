@@ -14,21 +14,21 @@ const en = {
   avatarUrl: "https://avatars.githubusercontent.com/u/63999575?v=4",
   tweetId: "1547578458787631104",
   skills: [
-    "React",
-    "Next",
-    // "JavaScript",
-    "Typescript",
-    // "Astro",
     "HTML",
     "CSS",
+    "Typescript",
+    "React Native",
+    "React",
+    "Swift",
+    "SwiftUI",
     "NodeJS",
+    "Next",
+    // "JavaScript",
+    // "Astro",
     "Python",
     "Flask",
     "Django",
-    "Swift",
-    "SwiftUI",
-    "React Native",
-    "Flutter",
+    // "Flutter",
     "WordPress",
   ],
   navbar: [
@@ -135,6 +135,28 @@ const en = {
   ],
   awesome: [
     {
+      title: "Minimal Material AI Chat Demo",
+      dates: "Feb 2025",
+      location: "🌍",
+      description:
+        "A responsive React app using Mistral 7B via OpenRouter API for interactive AI conversations.",
+      image: "/chat-app-preview.png",
+      mlh: "",
+      links: [
+        {
+          title: "Website",
+          type: "",
+          href: "https://material-ai-chat.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          title: "Source",
+          href: "https://github.com/deventw/material-ai-chat",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+    },
+    {
       title: "Number Klotski Puzzle Game",
       dates: "Dec 2024",
       location: "🌍",
@@ -161,13 +183,13 @@ const en = {
 
 const zh = {
   name: "DevenTW",
-  slogan: "我思故我在",
+  slogan: "「一花一世界，一樹一菩提」",
   url: "https://deven.tw",
   location: "香港",
   locationLink: "https://maps.app.goo.gl/BNSJUVybj1jgwiY48",
-  description: "喜歡思考；寫代碼、攝影、旅行、重量訓練～",
+  description: "喜歡思考；寫程式、攝影、旅行、重量訓練～",
   summary:
-    "自 2022 年畢業後，一直從事代碼開發工作。希望能做一些有趣的事情，並留下一些難忘的回憶~",
+    "自 2022 年畢業後，一直從事程式開發工作。希望能做一些有趣的事情，並留下一些難忘的回憶～",
   // avatarUrl: "/me.png",
   avatarUrl: "https://avatars.githubusercontent.com/u/63999575?v=4",
   tweetId: en.tweetId,
@@ -176,7 +198,7 @@ const zh = {
     {
       href: "/",
       icon: <Icons.me className="size-full" />,
-      label: "博客",
+      label: "部落格",
     },
     // {
     //   href: "https://camlife.cn",
@@ -208,11 +230,11 @@ const zh = {
       href: "",
       badges: [],
       location: "香港",
-      title: "前端開發程序員",
+      title: "前端開發工程師",
       logoUrl: "",
       start: "2022.08",
-      end: "2025.01",
-      description: "精簡技術，參與創業開發",
+      end: "2025.01", 
+      description: "精進技術，參與創業開發",
     },
   ],
   education: [
@@ -233,7 +255,7 @@ const zh = {
       dates: "2024.03 - Now",
       active: true,
       description:
-        "一個簡約設計的 iOS APP，管理你的雪櫃，確保食物新鮮，減少浪費",
+        "一個簡約設計的 iOS APP，管理你的冰箱，確保食物新鮮，減少浪費",
       technologies: ["SwiftUI", "Core Data", "NFC", "Alamofire"],
       links: [
         {
@@ -259,9 +281,31 @@ const zh = {
   ],
   awesome: [
     {
+      title: "Material AI 聊天示範",
+      dates: "2025.02",
+      location: "🌍",
+      description:
+        "一個使用 Mistral 7B 和 OpenRouter API 的 RWD React 聊天應用程式。",
+      image: "/chat-app-preview.png",
+      mlh: "",
+      links: [
+        {
+          title: "Website",
+          type: "",
+          href: "https://material-ai-chat.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          title: "Source",
+          href: "https://github.com/deventw/material-ai-chat",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+    },
+    {
       title: "數字華容道",
       dates: "2024.12",
-      location: "🌍",
+      location: "🌍", 
       description:
         "一個有趣且具挑戰性的謎題，透過將編號的方塊按正確的順序排列！",
       image: "/number-klotski.jpeg",
