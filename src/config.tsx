@@ -44,7 +44,7 @@ const en = {
     // },
   ],
   contact: {
-    email: "deven.tw+me@outlook.com",
+    email: "contact@deven.tw",
     tel: "+123456789",
     social: {
       Twitter: {
@@ -53,12 +53,12 @@ const en = {
         icon: <Icons.twitter className="size-full" />,
         navbar: false,
       },
-      // WeChat: {
-      //   name: "WeChat",
-      //   url: "https://mp.deven.tw",
-      //   icon: <Icons.wechat className="size-full" />,
-      //   navbar: true,
-      // },
+      Email: {
+        name: "Email",
+        url: "mailto: hi@deven.tw",
+        icon: <Icons.email className="size-full" />,
+        navbar: true,
+      },
       GitHub: {
         name: "GitHub",
         url: "https://github.com/deventw",
@@ -89,6 +89,15 @@ const en = {
       start: "Sep 2020",
       end: "Jun 2022",
       description: "Have a wonderful two years",
+    },
+    {
+      school: "Community College of City University",
+      href: "https://www.uowchk.edu.hk/",
+      degree: "Information Systems Development",
+      logoUrl: "/uow.jpg",
+      start: "2018.09",
+      end: "2020.06",
+      description: "Exploring the field, advancing skills",
     },
   ],
   projects: [
@@ -216,6 +225,12 @@ const zh = {
         icon: <Icons.x className="size-full" />,
         navbar: false,
       },
+      Email: {
+        name: "郵件",
+        url: "mailto: hi@deven.tw",
+        icon: <Icons.email className="size-full" />,
+        navbar: true,
+      },
       GitHub: {
         name: "GitHub",
         url: "https://github.com/deventw",
@@ -233,7 +248,7 @@ const zh = {
       title: "前端開發工程師",
       logoUrl: "",
       start: "2022.08",
-      end: "2025.01", 
+      end: "2025.01",
       description: "精進技術，參與創業開發",
     },
   ],
@@ -246,6 +261,15 @@ const zh = {
       start: "2020.09",
       end: "2022.06",
       description: "度過了美好的兩年",
+    },
+    {
+      school: "香港城市大學專上學院",
+      href: "https://www.uowchk.edu.hk/",
+      degree: "資訊系統開發",
+      logoUrl: "/uow.jpg",
+      start: "2018.09",
+      end: "2020.06",
+      description: "領域探索，提升技能",
     },
   ],
   projects: [
@@ -275,7 +299,7 @@ const zh = {
       description: "Bento 簡約風格 - Astro 部落格主題",
       technologies: ["Astro", "React", "Typescript", "TailwindCSS"],
       links: en.projects[1]?.links,
-      image: "/blog.png",
+      image: "/air-bento.png",
       video: "",
     },
   ],
@@ -305,7 +329,7 @@ const zh = {
     {
       title: "數字華容道",
       dates: "2024.12",
-      location: "🌍", 
+      location: "🌍",
       description:
         "一個有趣且具挑戰性的謎題，透過將編號的方塊按正確的順序排列！",
       image: "/number-klotski.jpeg",
