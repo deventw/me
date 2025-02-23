@@ -144,7 +144,7 @@ const en = {
   ],
   awesome: [
     {
-      title: "Minimal Material AI Chat Demo",
+      title: "LLM Minimal AI Chat Demo",
       dates: "Feb 2025",
       location: "🌍",
       description:
@@ -305,11 +305,11 @@ const zh = {
   ],
   awesome: [
     {
-      title: "Material AI 聊天示範",
+      title: "LLM AI 聊天示範",
       dates: "2025.02",
       location: "🌍",
       description:
-        "一個使用 Mistral 7B 和 OpenRouter API 的 RWD React 聊天應用程式。",
+        "一個使用 Mistral 7B 和 OpenRouter API 的 React 聊天應用程式。",
       image: "/cute-ai-chat.png",
       mlh: "",
       links: [
