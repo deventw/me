@@ -149,7 +149,7 @@ const en = {
       location: "🌍",
       description:
         "A responsive React app using Mistral 7B via OpenRouter API for interactive AI conversations.",
-      image: "/chat-app-preview.png",
+      image: "/cute-ai-chat.png",
       mlh: "",
       links: [
         {
@@ -310,7 +310,7 @@ const zh = {
       location: "🌍",
       description:
         "一個使用 Mistral 7B 和 OpenRouter API 的 RWD React 聊天應用程式。",
-      image: "/chat-app-preview.png",
+      image: "/cute-ai-chat.png",
       mlh: "",
       links: [
         {
