@@ -16,6 +16,7 @@ interface BlurFadeTextProps {
   delay?: number
   yOffset?: number
   animateByCharacter?: boolean
+  repeat?: boolean
 }
 const BlurFadeText = ({
   text,
@@ -25,6 +26,7 @@ const BlurFadeText = ({
   delay = 0,
   yOffset = 8,
   animateByCharacter = false,
+  repeat = false,
 }: BlurFadeTextProps) => {
   const defaultVariants: Variants = {
     hidden: { y: yOffset, opacity: 0, filter: "blur(8px)" },
@@ -45,8 +47,7 @@ const BlurFadeText = ({
               exit="hidden"
               variants={combinedVariants}
               transition={{
-                repeat: Infinity,
-                repeatType: "reverse",
+                ...(repeat && { repeat: Infinity, repeatType: "reverse" }),
                 delay: delay + i * characterDelay,
                 ease: "easeOut",
               }}
@@ -70,8 +71,7 @@ const BlurFadeText = ({
           exit="hidden"
           variants={combinedVariants}
           transition={{
-            repeat: Infinity,
-            repeatType: "reverse",
+            ...(repeat && { repeat: Infinity, repeatType: "reverse" }),
             delay,
             ease: "easeOut",
           }}
