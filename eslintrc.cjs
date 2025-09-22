@@ -1,8 +1,10 @@
 /** @type {import("eslint").Linter.Config} */
 const config = {
+  ignorePatterns: ["*.json"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: true,
+    extraFileExtensions: [".css", ".json"],
   },
   // @ts-ignore
   plugins: ["@typescript-eslint"],

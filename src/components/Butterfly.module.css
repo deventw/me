@@ -1,0 +1,24 @@
+.butterfly {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  position: relative;
+  transform: rotateZ(-45deg);
+  perspective: 800px;
+}
+
+.wing {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: bold;
+  opacity: 0.6;
+  /* border: 2px solid #ccc; */
+  transform-origin: left center;
+  position: absolute;
+}

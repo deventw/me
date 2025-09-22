@@ -5,6 +5,7 @@ import Markdown from "react-markdown"
 import { AwesomeCard } from "~/components/awesome-card"
 import { ProjectCard } from "~/components/project-card"
 import { ResumeCard } from "~/components/resume-card"
+import { RView } from "~/components/rview"
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar"
 import { Badge } from "~/components/ui/badge"
 import BlurFade from "~/components/ui/blur-fade"
@@ -308,6 +309,13 @@ export default function Page() {
           </BlurFade>
         </div>
       </section> */}
+      
+      {/* RView Component */}
+      <section id="rview">
+        <BlurFade delay={BLUR_FADE_DELAY * 16}>
+          <RView />
+        </BlurFade>
+      </section>
     </main>
   )
 }
