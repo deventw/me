@@ -1,4 +1,3 @@
-import clsx from "clsx"
 import { useLocale, useTranslations } from "next-intl"
 import Link from "next/link"
 import Markdown from "react-markdown"
@@ -23,28 +22,27 @@ export default function Page() {
     <main className="flex min-h-[100dvh] flex-col space-y-10 pb-40">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="flex justify-between gap-2">
-            <div className="flex flex-1 flex-col space-y-1.5">
+          <div className="flex justify-between items-center gap-4">
+            <div className="flex-1">
               <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className={clsx(
-                  "text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none",
-                  locale === "zh" && "!text-2xl sm:text-4xl xl:text-5xl/none",
-                )}
+                delay={BLUR_FADE_DELAY * 1.5}
+                className="text-3xl font-bold tracking-tighter sm:text-4xl"
                 yOffset={8}
-                text={t("hi") + ` ${DATA.name.split(" ")[0]} 👋`}
+                text={DATA.name}
               />
               <BlurFadeText
-                className={clsx(
-                  "max-w-[600px] md:text-xl",
-                  locale === "zh" && "mt-2",
-                )}
-                delay={BLUR_FADE_DELAY}
-                text={DATA.description}
+                className="text-lg font-medium text-muted-foreground mt-2"
+                delay={BLUR_FADE_DELAY * 2}
+                text={DATA.title}
+              />
+              <BlurFadeText
+                className="text-sm text-muted-foreground mt-3"
+                delay={BLUR_FADE_DELAY * 2.5}
+                text={DATA.personalMessage}
               />
             </div>
             <Link href={DATA.contact.social.GitHub.url ?? "#"} target="_blank">
-              <BlurFade delay={BLUR_FADE_DELAY}>
+              <BlurFade delay={BLUR_FADE_DELAY * 1.5}>
                 <Avatar className="size-28">
                   <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
                   <AvatarFallback>{DATA.name[0]}</AvatarFallback>
@@ -55,31 +53,72 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="about">
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">{t("about")}</h2>
-        </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown
-            className={clsx(
-              "prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert",
-              locale === "zh" && "mt-2 !text-base",
-            )}
-          >
-            {DATA.summary}
-          </Markdown>
-        </BlurFade>
-      </section>
-      {/*  */}
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 2}>
+            <h2 className="text-xl font-bold">{t("work-narrative")}</h2>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 3}>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {DATA.workDescription}
+            </p>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 4}>
+            <Markdown
+              className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert"
+            >
+              {DATA.summary}
+            </Markdown>
+          </BlurFade>
+        </div>
+      </section>
+
+      <section id="love">
+        <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
+            <h2 className="text-xl font-bold">{t("love")}</h2>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 6}>
+            <div className="flex flex-wrap justify-center gap-2">
+              {DATA.interests.map((interest, index) => (
+                <span key={index} className="rounded-full bg-muted px-3 py-1 text-sm">
+                  {interest}
+                </span>
+              ))}
+            </div>
+          </BlurFade>
+        </div>
+      </section>
+
+      <section id="bio">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 7}>
+            <h2 className="text-xl font-bold">{t("bio")}</h2>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 8}>
+            <div className="space-y-2">
+              {DATA.bio.map((item, index) => (
+                <div key={index} className="flex gap-4">
+                  <span className="font-mono text-sm text-muted-foreground min-w-[60px]">
+                    {item.year}
+                  </span>
+                  <span className="text-sm">{item.event}</span>
+                </div>
+              ))}
+            </div>
+          </BlurFade>
+        </div>
+      </section>
+
+      <section id="work-experience">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">{t("work")}</h2>
           </BlurFade>
           {DATA.work.map((work, id) => (
             <BlurFade
               key={work.company}
-              delay={BLUR_FADE_DELAY * 6 + id * 0.05}
+              delay={BLUR_FADE_DELAY * 16 + id * 0.05}
             >
               <ResumeCard
                 key={work.company}
@@ -96,16 +135,16 @@ export default function Page() {
           ))}
         </div>
       </section>
-      {/*  */}
+
       <section id="education">
         <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 7}>
+          <BlurFade delay={BLUR_FADE_DELAY * 16}>
             <h2 className="text-xl font-bold">{t("education")}</h2>
           </BlurFade>
           {DATA.education.map((education, id) => (
             <BlurFade
               key={education.school}
-              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+              delay={BLUR_FADE_DELAY * 16 + id * 0.05}
             >
               <ResumeCard
                 key={education.school}
@@ -121,15 +160,16 @@ export default function Page() {
           ))}
         </div>
       </section>
+
       {/*  */}
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 9}>
+          <BlurFade delay={BLUR_FADE_DELAY * 16}>
             <h2 className="text-xl font-bold">{t("skills")}</h2>
           </BlurFade>
           <div className="flex flex-wrap gap-1">
             {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
+              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 16 + id * 0.05}>
                 <Badge key={skill}>{skill}</Badge>
               </BlurFade>
             ))}
@@ -139,26 +179,19 @@ export default function Page() {
       {/*  */}
       <section id="projects">
         <div className="w-full space-y-12 py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 11}>
+          <BlurFade delay={BLUR_FADE_DELAY * 16}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-foreground px-3 py-1 text-sm text-background">
                   {t("projects")}
                 </div>
                 <h2
-                  className={clsx(
-                    "text-3xl font-bold tracking-tighter sm:text-5xl",
-                    locale === "zh" && "my-4 !text-2xl sm:!text-4xl",
-                  )}
+                  className="text-3xl font-bold tracking-tighter sm:text-5xl"
                 >
                   {t("check-my-work")}
                 </h2>
                 <p
-                  className={clsx(
-                    "text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed",
-                    locale === "zh" &&
-                      "my-4 md:!text-sm/relaxed lg:!text-base/relaxed xl:!text-base/relaxed",
-                  )}
+                  className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
                 >
                   {t("my-work-description")}
                 </p>
@@ -169,7 +202,7 @@ export default function Page() {
             {DATA.projects.map((project, id) => (
               <BlurFade
                 key={project.title}
-                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+                delay={BLUR_FADE_DELAY * 16 + id * 0.05}
               >
                 <ProjectCard
                   href={project.href}
@@ -189,38 +222,31 @@ export default function Page() {
       </section>
       <section id="awesome">
         <div className="w-full space-y-12 py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 13}>
+          <BlurFade delay={BLUR_FADE_DELAY * 16}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-foreground px-3 py-1 text-sm text-background">
                   {t("awesome")}
                 </div>
                 <h2
-                  className={clsx(
-                    "text-3xl font-bold tracking-tighter sm:text-5xl",
-                    locale === "zh" && "my-4 !text-2xl sm:!text-4xl",
-                  )}
+                  className="text-3xl font-bold tracking-tighter sm:text-5xl"
                 >
                   {t("building-things")}
                 </h2>
                 <p
-                  className={clsx(
-                    "text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed",
-                    locale === "zh" &&
-                      "my-4 md:!text-sm/relaxed lg:!text-base/relaxed xl:!text-base/relaxed",
-                  )}
+                  className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
                 >
                   {t("have-done")}
                 </p>
               </div>
             </div>
           </BlurFade>
-          <BlurFade delay={BLUR_FADE_DELAY * 14}>
+          <BlurFade delay={BLUR_FADE_DELAY * 16}>
             <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
               {DATA.awesome.map((project, id) => (
                 <BlurFade
                   key={project.title + project.dates}
-                  delay={BLUR_FADE_DELAY * 15 + id * 0.05}
+                  delay={BLUR_FADE_DELAY * 16 + id * 0.05}
                 >
                   <AwesomeCard
                     title={project.title}
@@ -244,19 +270,12 @@ export default function Page() {
                 {t("travel")}
               </div>
               <h2
-                className={clsx(
-                  "text-3xl font-bold tracking-tighter sm:text-5xl",
-                  locale === "zh" && "my-4 !text-2xl sm:!text-4xl",
-                )}
+                className="text-3xl font-bold tracking-tighter sm:text-5xl"
               >
                 {t("places-i-visited")}
               </h2>
               <p
-                className={clsx(
-                  "mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed",
-                  locale === "zh" &&
-                    "my-4 md:!text-sm/relaxed lg:!text-base/relaxed xl:!text-base/relaxed",
-                )}
+                className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
               >
                 {t("data-from")}{" "}
                 <Link
@@ -284,10 +303,7 @@ export default function Page() {
                 {t("contact")}
               </div>
               <h2
-                className={clsx(
-                  "text-3xl font-bold tracking-tighter sm:text-5xl",
-                  locale === "zh" && "my-4 !text-2xl sm:!text-4xl",
-                )}
+                className="text-3xl font-bold tracking-tighter sm:text-5xl"
               >
                 {t("get-in-touch")}
               </h2>

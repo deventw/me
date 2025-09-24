@@ -2,6 +2,7 @@
   "hi": "Hi:}, I'm",
   "about": "About",
   "work": "Work Experience",
+  "work-narrative": "About",
   "present": "Present",
   "education": "Education",
   "contact": "Contact",
@@ -22,5 +23,7 @@
   "will-respond": "and I'll respond whenever I can.",
   "language": "Toggle Language",
   "light": "Light Mode",
-  "dark": "Dark Mode"
+  "dark": "Dark Mode",
+  "love": "I ♥",
+  "bio": "Bio"
 }

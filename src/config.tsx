@@ -7,9 +7,32 @@ const en = {
   location: "Hong Kong",
   locationLink: "https://maps.app.goo.gl/BNSJUVybj1jgwiY48",
   description:
-    "<Full-stack Software Engineer> I enjoy thinking, coding, photographing and strength training.",
+    "Hello, I'm a full-stack developer based in Hong Kong!",
+  personalMessage:
+    "I hope to do something interesting and having some unforgettable memories.",
+  title: "Full-Stack Developer & Designer",
   summary:
-    "After graduating in 2022, I have been working in software development. I hope to do something interesting and having some unforgettable memories.",
+    "",
+  workDescription:
+    "DevenTW is a full-stack developer based in Hong Kong with a passion for building innovative digital solutions. He has a knack for all things software development, from planning and designing all the way to solving real-life problems with code. When not coding, he loves photography, strength training, and exploring new technologies. Currently, he is working on various projects and continuously learning to stay at the forefront of technology.",
+  bio: [
+    {
+      year: "2022",
+      event: "Graduated with Bachelor's degree in Information Management"
+    },
+    {
+      year: "2022",
+      event: "Started working as a Frontend Programmer in the educational technology sector"
+    },
+    {
+      year: "2025",
+      event: "Moved to Analyst Programmer in custom software development"
+    },
+    {
+      year: "Present",
+      event: "Working as a full-stack developer, building innovative solutions"
+    }
+  ],
   // avatarUrl: "/me.png",
   avatarUrl: "https://avatars.githubusercontent.com/u/63999575?v=4",
   tweetId: "1547578458787631104",
@@ -31,11 +54,18 @@ const en = {
     // "AWS",
     // "Vercel",
     "Git",
+    "Figma",
     "REST APIs",
-    "GraphQL",
     "Swift",
     "SwiftUI",
     "WordPress",
+  ],
+  interests: [
+    "Coding",
+    "Photography", 
+    "Strength Training",
+    "Travel",
+    "Music"
   ],
   navbar: [
     {
@@ -209,17 +239,46 @@ const en = {
 
 const zh = {
   name: "DevenTW",
-  slogan: "「一花一世界，一樹一菩提」",
+  slogan: "「一花一世界」",
   url: "https://deven.tw",
   location: "香港",
   locationLink: "https://maps.app.goo.gl/BNSJUVybj1jgwiY48",
-  description: "喜歡思考；寫程式、攝影、旅行、重量訓練～",
+  description: "你好，我是一名在香港的全端開發者！",
+  personalMessage: "希望能做一些有趣的事情，並留下一些難忘的回憶～",
+  title: "全端開發者 & 設計師",
   summary:
-    "自 2022 年畢業後，一直從事程式開發工作。希望能做一些有趣的事情，並留下一些難忘的回憶～",
+    "",
+  workDescription:
+    "DevenTW 是一名在香港的全端開發者，熱衷於構建創新的數位解決方案。他享受從規劃到部署的整個過程，也熱愛學習新技術。不寫程式的時候，他會去拍照、健身，或是探索最新的科技趨勢。",
+  bio: [
+    {
+      year: "2022",
+      event: "畢業於資訊管理學士學位"
+    },
+    {
+      year: "2022",
+      event: "開始在教育科技領域擔任前端程式設計師"
+    },
+    {
+      year: "2025",
+      event: "轉至客製化軟體開發領域擔任分析程式設計師"
+    },
+    {
+      year: "至今",
+      event: "從事全端開發工作，構建創新解決方案"
+    }
+  ],
   // avatarUrl: "/me.png",
   avatarUrl: "https://avatars.githubusercontent.com/u/63999575?v=4",
   tweetId: en.tweetId,
   skills: en.skills,
+  interests: [
+    "編程",
+    "攝影", 
+    "健身",
+    "旅行",
+    "音樂"
+  ],
   navbar: [
     {
       href: "/",
