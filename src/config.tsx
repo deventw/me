@@ -65,7 +65,8 @@ const en = {
     "Photography", 
     "Strength Training",
     "Travel",
-    "Music"
+    "Music",
+    "Ramen🍜"
   ],
   navbar: [
     {
@@ -277,7 +278,8 @@ const zh = {
     "攝影", 
     "健身",
     "旅行",
-    "音樂"
+    "音樂",
+    "拉麵🍜"
   ],
   navbar: [
     {
