@@ -132,7 +132,7 @@ const en = {
     {
       school: "National Taiwan University of Science and Technology",
       href: "https://www.ntust.edu.tw",
-      degree: "Information Management",
+      degree: "Bachelor of Business Administration (Information Management)",
       logoUrl: "/ntust.png",
       start: "Sep 2020",
       end: "Jun 2022",
@@ -254,7 +254,7 @@ const zh = {
   bio: [
     {
       year: "2022",
-      event: "畢業於資訊管理學士學位"
+      event: "畢業於資訊管理學學士學位"
     },
     {
       year: "2022",
@@ -345,7 +345,7 @@ const zh = {
     {
       school: "國立臺灣科技大學",
       href: "https://www.ntust.edu.tw",
-      degree: "資訊管理",
+      degree: "管理學學士 (資訊管理系)",
       logoUrl: "/ntust.png",
       start: "2020.09",
       end: "2022.06",
