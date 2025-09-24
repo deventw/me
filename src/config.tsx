@@ -151,7 +151,7 @@ const en = {
     {
       title: "Swing Fridge Pro",
       href: "https://apps.apple.com/hk/app/swing-fridge-pro/id6670784659?l=en-GB",
-      dates: "Mar 2024 - Now",
+      dates: "Mar 2024 - Jan 2025",
       active: true,
       description:
         "An efficient iOS app to manage your fridge, ensuring food freshness and reducing waste",
@@ -363,7 +363,7 @@ const zh = {
     {
       title: "叫醒冰箱 Pro",
       href: "https://apps.apple.com/hk/app/swing-fridge-pro/id6670784659?l=en-GB",
-      dates: "2024.03 - Now",
+      dates: "2024.03 - 2025.01",
       active: true,
       description:
         "一個簡約設計的 iOS APP，管理你的冰箱，確保食物新鮮，減少浪費",
