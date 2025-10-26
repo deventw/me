@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import styles from './Leaf.module.css';
 
@@ -16,7 +17,6 @@ const Leaf: React.FC<LeafProps> = ({
   const containerStyle = {
     width: `${size}px`,
     height: `${size}px`,
-    border: `2px ${color}30 solid`,
   };
 
 
@@ -26,7 +26,7 @@ const Leaf: React.FC<LeafProps> = ({
   };
 
   return (
-    <div className={`${styles.container} ${className}`} style={containerStyle}>
+    <div className={`${styles.container} ${className} border-foreground`} style={containerStyle}>
         <div className={styles.redRing} style={redRingStyle} />
     </div>
   );

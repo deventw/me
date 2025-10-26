@@ -7,7 +7,6 @@ import Wing from './Wing';
 
 const ButterflyViewV2: React.FC = () => {
 
-
   return (
     <motion.div
       animate={{
