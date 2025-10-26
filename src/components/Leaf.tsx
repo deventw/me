@@ -12,9 +12,11 @@ const Leaf: React.FC<LeafProps> = ({
   size = 24, 
   color = '#dc2' 
 }) => {
+
   const containerStyle = {
     width: `${size}px`,
     height: `${size}px`,
+    border: `2px ${color}30 solid`,
   };
 
 
