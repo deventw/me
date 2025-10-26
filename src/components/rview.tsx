@@ -1,7 +1,13 @@
 "use client"
 
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { cn } from "~/lib/utils"
 import ButterflyView from "./Butterfly"
+
+// Import Swiper styles
+import 'swiper/css'
+import ButterflyViewV2 from './ButterflyV2'
+
 
 interface RViewProps {
   className?: string
@@ -17,7 +23,7 @@ function CurvedText({ text, radius, className }: CurvedTextProps) {
   const fontSize = Math.min(radius * 0.08, 16) // Even smaller font for better fit
   const centerX = radius + 20
   const centerY = radius + 20
-  
+
   return (
     <svg
       className={cn("h-full w-full", className)}
@@ -51,7 +57,7 @@ export function RView({ className }: RViewProps) {
     <div className={cn("w-full space-y-12 py-12", className)}>
 
       {/* Animated Ring of Text with custom SVG */}
-      <div className="flex items-center justify-center">
+      {/* <div className="flex items-center justify-center">
         <div className="relative h-80 w-80">
           <div className="h-full w-full animate-spin-slow">
             <CurvedText
@@ -61,7 +67,7 @@ export function RView({ className }: RViewProps) {
             />
           </div>
           
-          {/* Center R Letter */}
+ 
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
               <div 
                 onClick={() => window.open('https://www.youtube.com/watch?v=fzfLHt0jImU', '_blank')}
@@ -78,6 +84,78 @@ export function RView({ className }: RViewProps) {
               </div>
           </div>
         </div>
+      </div> */}
+
+      {/* Swiper Carousel */}
+      <div className="w-full max-w-4xl mx-auto px-4">
+        <Swiper
+          modules={[]}
+          slidesPerView={1}
+        >
+          <SwiperSlide>
+            {/* Animated Ring of Text with custom SVG */}
+            <div className="flex items-center justify-center">
+              <div className="relative h-80 w-80">
+                <div className="h-full w-full animate-spin-slow">
+                  <CurvedText
+                    text="SOMETHING IN THE RAIN • SOMETHING IN THE RAIN • SOMETHING IN THE RAIN • SOMETHING IN THE RAIN • SOMETHING IN THE RAIN • SOMETHING IN THE RAIN • SOMETHING IN THE RAIN • SOMETHING IN THE RAIN •"
+                    radius={140}
+                    className="text-foreground"
+                  />
+                </div>
+
+                {/* Center R Letter */}
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+                  <div
+                    onClick={() => window.open('https://www.youtube.com/watch?v=fzfLHt0jImU', '_blank')}
+                    className="cursor-pointer"
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        window.open('https://www.youtube.com/watch?v=fzfLHt0jImU', '_blank')
+                      }
+                    }}
+                  >
+                    <ButterflyView />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            {/* Animated Ring of Text with custom SVG */}
+            <div className="flex items-center justify-center">
+              <div className="relative h-80 w-80">
+                <div className="h-full w-full animate-spin-slow">
+                  <CurvedText
+                    text="• SINCERITY IS SCARY • SINCERITY IS SCARY • SINCERITY IS SCARY • SINCERITY IS SCARY • SINCERITY IS SCARY • SINCERITY IS SCARY • SINCERITY IS SCARY • SINCERITY IS SCARY"
+                    radius={140}
+                    className="text-foreground"
+                  />
+                </div>
+
+                {/* Center R Letter */}
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+                  <div
+                    onClick={() => window.open('https://www.youtube.com/watch?v=1K93ioXL63c', '_blank')}
+                    className="cursor-pointer"
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        window.open('https://www.youtube.com/watch?v=1K93ioXL63c', '_blank')
+                      }
+                    }}
+                  >
+                    <ButterflyViewV2 />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+
+        </Swiper>
       </div>
     </div>
   )
