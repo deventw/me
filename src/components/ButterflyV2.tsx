@@ -1,7 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import React from 'react';
-import { SEOUL_COLORS } from '~/constants/colors';
+import { SEOUL_COLORS, SHENZHEN_COLORS } from '~/constants/colors';
 import styles from './ButterflyV2.module.css';
 import Wing from './Wing';
 
@@ -36,7 +36,7 @@ const ButterflyViewV2: React.FC = () => {
         >
           <Wing
             visibleNumbers={[1, 2, 3, 4, 6, 10, 11, 15, 16, 17, 18, 19, 21, 25, 26, 30, 31, 35]}
-            colors={SEOUL_COLORS} />
+            colors={SHENZHEN_COLORS} />
         </motion.div>
 
         {/* Bottom Wing (R) - Rotates on Z-axis */}
