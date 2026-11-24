@@ -93,7 +93,7 @@ const en = {
       year: "2025",
       description:
         "Thirty film-inspired frames that turn photos into prints. Every photo is processed on the device and never uploaded.",
-      stack: ["iOS", "On-device processing", "5 languages"],
+      stack: ["Flutter", "On-device processing", "5 languages"],
       href: "https://yohaku.mmqm.dev/",
       icon: "/apps/yohaku.png",
     },
@@ -245,7 +245,7 @@ const zh: LocaleData = {
       ...en.work[1]!,
       kind: "iOS App",
       description: "30 款靈感來自底片攝影的邊框，把照片變成作品。所有照片都在裝置上處理，不會上傳。",
-      stack: ["iOS", "裝置端處理", "五種語言"],
+      stack: ["Flutter", "裝置端處理", "五種語言"],
     },
     {
       ...en.work[2]!,
