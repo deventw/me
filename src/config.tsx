@@ -67,7 +67,7 @@ const en = {
     greeting: "Hi, I'm Deven.",
     headline: ["I build web and mobile", "products, end to end."],
     intro:
-      "Full-stack developer in Hong Kong. By day I build custom business software as an analyst programmer. On the side I run MMQM, a small studio where I make websites and ship my own apps.",
+      "Full-stack developer in Hong Kong. By day I build custom business software as an analyst programmer. Outside of work I design and ship my own iOS apps.",
     cta: "Get in touch",
     secondary: "See my work",
   },
@@ -112,7 +112,7 @@ const en = {
       kind: "Website",
       year: "2026",
       description:
-        "My studio's website: six languages, every page pre-rendered for search, plus unlisted digital business cards behind a QR code.",
+        "A company website in six languages: every page pre-rendered for search, plus unlisted digital business cards behind a QR code.",
       stack: ["Next.js", "TypeScript", "Cloudflare"],
       href: "https://mmqm.dev/",
     },
@@ -163,13 +163,6 @@ const en = {
     },
   ],
   experience: [
-    {
-      period: "Now",
-      title: "Founder",
-      org: "MMQM",
-      href: "https://mmqm.dev/",
-      description: "A small studio for websites, systems and apps, and where I ship my own products.",
-    },
     {
       period: "Aug 2025 — Now",
       title: "Analyst Programmer",
@@ -229,7 +222,7 @@ const zh: LocaleData = {
     greeting: "你好，我是 Deven。",
     headline: ["從構想到上線，", "一手做好網頁和 App。"],
     intro:
-      "香港的全端開發者。白天以分析程式員的身分開發企業客製化系統；工作之外，我經營小型工作室 MMQM，做網站，也推出自己的 App。",
+      "香港的全端開發者。白天以分析程式員的身分開發企業客製化系統；工作之外，我也設計並推出自己的 iOS App。",
     cta: "聯絡我",
     secondary: "看看作品",
   },
@@ -259,7 +252,7 @@ const zh: LocaleData = {
     {
       ...en.work[3]!,
       kind: "網站",
-      description: "我工作室的網站：六種語言、每一頁都預先產生以利搜尋，另外還有藏在二維碼後面的電子名片。",
+      description: "六種語言的企業網站：每一頁都預先產生以利搜尋，另外還有藏在二維碼後面的電子名片。",
     },
     {
       ...en.work[4]!,
@@ -300,19 +293,13 @@ const zh: LocaleData = {
   experience: [
     {
       ...en.experience[0]!,
-      period: "現在",
-      title: "創辦人",
-      description: "做網站、系統和 App 的小型工作室，也是我推出自己產品的地方。",
-    },
-    {
-      ...en.experience[1]!,
       period: "2025.08 — 現在",
       title: "分析程式員",
       org: "企業客製化軟體開發",
       description: "負責企業客製化系統的需求分析、系統設計與開發。",
     },
     {
-      ...en.experience[2]!,
+      ...en.experience[1]!,
       period: "2022.08 — 2025.01",
       title: "前端程式員",
       org: "教育科技",
