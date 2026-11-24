@@ -193,13 +193,12 @@ const en = {
     },
   ] as Experience[],
   skills: [
-    {
-      group: "Frontend",
-      items: ["TypeScript", "React", "Next.js", "TanStack Start", "Astro", "Vite", "HTML & CSS", "Tailwind CSS"],
-    },
-    { group: "Mobile", items: ["Swift", "SwiftUI", "Core Data", "NFC", "Flutter", "React Native"] },
-    { group: "Backend", items: ["Node.js", "Bun", "Express", "Hono", "Python", "PostgreSQL", "REST APIs"] },
-    { group: "AI", items: ["LLM API integration", "OpenRouter", "AI-assisted development", "Claude Code"] },
+    { group: "Languages", items: ["TypeScript", "Swift", "Dart", "Python", "HTML & CSS"] },
+    { group: "Web", items: ["React", "Next.js", "TanStack Start", "Astro", "Vite", "Tailwind CSS"] },
+    { group: "Mobile", items: ["SwiftUI", "Flutter", "React Native", "Core Data", "NFC"] },
+    { group: "Backend & data", items: ["Node.js", "Bun", "Express", "Hono", "PostgreSQL", "REST APIs"] },
+    { group: "AI integration", items: ["LLM APIs", "OpenRouter", "DeepSeek"] },
+    { group: "AI dev tools", items: ["Claude Code", "Cursor", "Codex", "OpenCode"] },
     { group: "Cloud & tools", items: ["Cloudflare Workers & Pages", "Vercel", "Git", "Figma", "WordPress"] },
   ],
   contact: {
@@ -315,11 +314,13 @@ const zh: LocaleData = {
     { ...en.education[1]!, title: "資訊系統開發", org: "香港城市大學專上學院" },
   ],
   skills: [
-    { group: "前端", items: en.skills[0]!.items },
-    { group: "行動裝置", items: en.skills[1]!.items },
-    { group: "後端", items: en.skills[2]!.items },
-    { group: "AI", items: ["LLM API 串接", "OpenRouter", "AI 輔助開發", "Claude Code"] },
-    { group: "雲端與工具", items: en.skills[4]!.items },
+    { group: "程式語言", items: en.skills[0]!.items },
+    { group: "網頁", items: en.skills[1]!.items },
+    { group: "行動裝置", items: en.skills[2]!.items },
+    { group: "後端與資料", items: en.skills[3]!.items },
+    { group: "AI 整合", items: ["LLM API", "OpenRouter", "DeepSeek"] },
+    { group: "AI 開發工具", items: en.skills[5]!.items },
+    { group: "雲端與工具", items: en.skills[6]!.items },
   ],
   contact: {
     ...en.contact,
