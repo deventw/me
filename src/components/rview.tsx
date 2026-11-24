@@ -1,5 +1,3 @@
-"use client"
-
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { cn } from "~/lib/utils"
 import ButterflyView from "./Butterfly"

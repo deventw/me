@@ -1,10 +1,9 @@
-import { useLocale, useTranslations } from "next-intl"
-import Link from "next/link"
 import type { ReactNode } from "react"
 import { RView } from "~/components/rview"
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar"
 import BlurFade from "~/components/ui/blur-fade"
 import { getLocaleData } from "~/config"
+import { useLocale, useT } from "~/lib/i18n"
 
 const DELAY = 0.04
 
@@ -34,9 +33,10 @@ function Arrow() {
   )
 }
 
-export default function Page() {
+/** 首頁內容（英文 / 中文共用），語言由 LocaleProvider 決定 */
+export function HomePage() {
   const locale = useLocale()
-  const t = useTranslations()
+  const t = useT()
   const DATA = getLocaleData(locale)
 
   return (
@@ -53,9 +53,9 @@ export default function Page() {
               <p className="font-medium">{DATA.name}</p>
               <p className="font-mono text-xs text-muted-foreground">
                 {DATA.role} ·{" "}
-                <Link href={DATA.locationLink} target="_blank" className="hover:text-foreground">
+                <a href={DATA.locationLink} target="_blank" rel="noreferrer" className="hover:text-foreground">
                   {DATA.location}
-                </Link>
+                </a>
               </p>
             </div>
           </div>
@@ -73,16 +73,16 @@ export default function Page() {
         <BlurFade delay={DELAY * 3}>
           <p className="mt-8 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">{DATA.hero.intro}</p>
           <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
-            <Link
+            <a
               href={`mailto:${DATA.contact.email}`}
               className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-85"
               data-umami-event="hero-email"
             >
               {DATA.hero.cta}
-            </Link>
-            <Link href="#work" className="text-sm font-medium underline decoration-border underline-offset-4 hover:decoration-foreground">
+            </a>
+            <a href="#work" className="text-sm font-medium underline decoration-border underline-offset-4 hover:decoration-foreground">
               {DATA.hero.secondary} ↓
-            </Link>
+            </a>
           </div>
         </BlurFade>
       </section>
@@ -104,9 +104,9 @@ export default function Page() {
           {DATA.work.map((w, i) => (
             <BlurFade key={w.title} delay={DELAY * (2 + i)}>
               <li>
-                <Link
+                <a
                   href={w.href}
-                  target="_blank"
+                  target="_blank" rel="noreferrer"
                   className="group grid grid-cols-[3.5rem_1fr] gap-x-5 gap-y-1 py-6 sm:grid-cols-[4rem_1fr_auto]"
                   data-umami-event={`work-${w.title}`}
                 >
@@ -136,13 +136,13 @@ export default function Page() {
                   </span>
                   <p className="text-pretty text-sm leading-relaxed text-muted-foreground">{w.description}</p>
                   <p className="mt-1 font-mono text-xs text-muted-foreground/80">{w.stack.join(" · ")}</p>
-                </Link>
+                </a>
                 {w.links ? (
                   <div className="-mt-3 flex gap-4 pb-6 pl-[4.75rem] sm:pl-[5.25rem]">
                     {w.links.map((l) => (
-                      <Link key={l.href} href={l.href} target="_blank" className="font-mono text-xs underline underline-offset-4 hover:text-brand">
+                      <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="font-mono text-xs underline underline-offset-4 hover:text-brand">
                         {l.label}
-                      </Link>
+                      </a>
                     ))}
                   </div>
                 ) : null}
@@ -167,9 +167,9 @@ export default function Page() {
                   <p className="text-sm leading-relaxed text-muted-foreground">{p.description}</p>
                   <div className="flex gap-4 pt-1">
                     {p.links.map((l) => (
-                      <Link key={l.href} href={l.href} target="_blank" className="font-mono text-xs underline underline-offset-4 hover:text-brand">
+                      <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="font-mono text-xs underline underline-offset-4 hover:text-brand">
                         {l.label}
-                      </Link>
+                      </a>
                     ))}
                   </div>
                 </div>
@@ -191,9 +191,9 @@ export default function Page() {
                     {e.title}
                     <span className="font-normal text-muted-foreground"> · </span>
                     {e.href ? (
-                      <Link href={e.href} target="_blank" className="font-normal underline decoration-border underline-offset-4 hover:text-brand">
+                      <a href={e.href} target="_blank" rel="noreferrer" className="font-normal underline decoration-border underline-offset-4 hover:text-brand">
                         {e.org}
-                      </Link>
+                      </a>
                     ) : (
                       <span className="font-normal">{e.org}</span>
                     )}
@@ -211,9 +211,9 @@ export default function Page() {
               <span className="font-mono text-xs leading-6 text-muted-foreground">{e.period}</span>
               <div>
                 <h3 className="font-semibold tracking-tight">{e.title}</h3>
-                <Link href={e.href ?? "#"} target="_blank" className="text-sm text-muted-foreground hover:text-foreground">
+                <a href={e.href ?? "#"} target="_blank" rel="noreferrer" className="text-sm text-muted-foreground hover:text-foreground">
                   {e.org}
-                </Link>
+                </a>
               </div>
             </li>
           ))}
@@ -237,21 +237,21 @@ export default function Page() {
         <BlurFade delay={DELAY * 2}>
           <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-5xl">{DATA.contact.title}</h2>
           <p className="mt-5 max-w-xl text-pretty leading-relaxed text-muted-foreground">{DATA.contact.body}</p>
-          <Link
+          <a
             href={`mailto:${DATA.contact.email}`}
             className="mt-8 inline-block text-2xl font-medium tracking-tight underline decoration-brand decoration-2 underline-offset-8 hover:text-brand sm:text-3xl"
             data-umami-event="contact-email"
           >
             {DATA.contact.email}
-          </Link>
+          </a>
           <div className="mt-8 flex gap-6">
             {Object.values(DATA.contact.social)
               .filter((s) => !s.url.startsWith("mailto:"))
               .map((s) => (
-                <Link key={s.name} href={s.url} target="_blank" className="group inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
+                <a key={s.name} href={s.url} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
                   {s.name}
                   <Arrow />
-                </Link>
+                </a>
               ))}
           </div>
         </BlurFade>

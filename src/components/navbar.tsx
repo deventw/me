@@ -1,7 +1,4 @@
-"use client"
-
-import { useLocale } from "next-intl"
-import Link from "next/link"
+import { useLocale } from "~/lib/i18n"
 import { useEffect, useRef, useState } from "react"
 import { LanguageToggle } from "~/components/language/toggle"
 import { ModeToggle } from "~/components/theme/toggle"
@@ -51,14 +48,14 @@ export function Navbar() {
             <DockIcon key={item.href}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Link
+                  <a
                     className="rounded-full p-[10px] hover:bg-accent"
                     href={item.href}
                     data-umami-event={"navbar-" + item.label}
                     target="_blank"
                   >
                     {item.icon}
-                  </Link>
+                  </a>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>{item.label}</p>
@@ -75,14 +72,14 @@ export function Navbar() {
               <DockIcon key={name}>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Link
+                    <a
                       className="rounded-full p-[10px] hover:bg-accent"
                       href={social.url}
                       data-umami-event={"navbar-" + social.name}
                       target="_blank"
                     >
                       {social.icon}
-                    </Link>
+                    </a>
                   </TooltipTrigger>
                   <TooltipContent>
                     <p>{social.name}</p>

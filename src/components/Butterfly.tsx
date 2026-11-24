@@ -1,7 +1,5 @@
-"use client";
 import { motion } from 'framer-motion';
-import { useTheme } from 'next-themes';
-import Image from 'next/image';
+import { useTheme } from '~/components/theme/provider';
 import React, { useEffect, useState } from 'react';
 import styles from './Butterfly.module.css';
 
@@ -41,7 +39,7 @@ const ButterflyView: React.FC = () => {
           ease: "easeInOut"
         }}
       >
-         <Image
+         <img
             key={resolvedTheme}
             src={wingSrc}
             alt={"R"}
@@ -65,7 +63,7 @@ const ButterflyView: React.FC = () => {
           delay: 0.2
         }}
       >
-        <Image
+        <img
             key={resolvedTheme}
             src={wingSrc}
             alt={"R"}

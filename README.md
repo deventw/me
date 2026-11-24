@@ -1,43 +1,31 @@
-## Quick Start
+# deven.tw
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/sun0225SUN/me)
+Personal site of Deven Kwong, full-stack developer in Hong Kong.
 
+## Stack
 
-##  Features
+- [TanStack Start](https://tanstack.com/start) (TanStack Router) + React 19 + Vite
+- Tailwind CSS, Radix UI, Framer Motion
+- Fully prerendered at build time: `/` (English) and `/zh/` (Traditional Chinese) are static HTML, plus `sitemap.xml`. No server needed.
 
-- Setup only takes a few minutes by editing the [single config file](./src/data/resume.tsx)
-- Built using Next.js 15, React, Typescript, Shadcn/UI, TailwindCSS, Framer Motion, Magic UI
-- Responsive for different devices
-- Optimized for Next.js and Vercel
+## Development
 
-## Getting Started Locally
+```bash
+bun install
+bun run dev        # http://localhost:3000
+bun run build      # static site → dist/client
+bun run typecheck
+```
 
-1. Clone this repository to your local machine:
+## Content
 
-   ```bash
-   git clone https://github.com/sun0225SUN/me
-   ```
+- All copy and data: `src/config.tsx` (English and Chinese)
+- UI labels: `messages/en.json`, `messages/zh.json`
+- Page layout: `src/components/home.tsx`
+- Routes: `src/routes/index.tsx` (`/`), `src/routes/zh/index.tsx` (`/zh/`)
 
-2. Move to the cloned directory
+## Deploying (Cloudflare Pages)
 
-   ```bash
-   cd me
-   ```
-
-3. Install dependencies:
-
-   ```bash
-   pnpm install
-   ```
-
-4. Start the local Server:
-
-   ```bash
-   pnpm dev
-   ```
-
-5. Open the [Config file](./src/config.tsx) and make changes
-
-## License
-
-Licensed under the [MIT license](https://github.com/sun0225SUN/me/blob/main/LICENSE.md).
+- Build command: `bun run build`
+- Build output directory: `dist/client`
+- `public/_headers` sets long-lived caching for hashed `/assets/*`
