@@ -24,13 +24,14 @@ export async function generateMetadata({ params }: { params: Params }) {
   return {
     metadataBase: new URL(data.url),
     title: {
-      default: data.name + " | " + data.slogan,
-      template: `%s | ${data.name + " | " + data.slogan}`,
+      default: data.meta.title,
+      template: `%s — ${data.name}`,
     },
-    description: data.description,
+    description: data.meta.description,
+    alternates: { canonical: data.url },
     openGraph: {
-      title: data.name + " | " + data.slogan,
-      description: data.description,
+      title: data.meta.title,
+      description: data.meta.description,
       url: data.url,
       siteName: data.name,
       locale: locale,
@@ -48,15 +49,11 @@ export async function generateMetadata({ params }: { params: Params }) {
       },
     },
     twitter: {
-      title: data.name + " | " + data.slogan,
+      title: data.meta.title,
       card: "summary_large_image",
-      description: data.description,
+      description: data.meta.description,
       images: ["/twitter-image.png"],
       creator: "@deven_tw",
-    },
-    verification: {
-      google: "",
-      yandex: "",
     },
   }
 }
@@ -80,7 +77,7 @@ export default async function LocaleLayout({
   const messages = await getMessages()
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale === "zh" ? "zh-Hant" : "en"} suppressHydrationWarning>
       <head>
         {/* <link rel="icon" href="/favicon.png" type="image/x-icon" /> */}
         <link
@@ -103,7 +100,7 @@ export default async function LocaleLayout({
       </head>
       <body
         className={cn(
-          "mx-auto min-h-screen max-w-2xl bg-background px-6 py-12 font-sans antialiased sm:py-24",
+          "mx-auto min-h-screen max-w-3xl bg-background px-6 py-12 font-sans antialiased sm:py-20",
           fontSans.variable,
         )}
         style={{ position: "relative" }}

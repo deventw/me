@@ -1,447 +1,342 @@
 import { Icons } from "~/components/icons"
 
+/**
+ * 個人網站嘅全部內容（英文 + 繁體中文）。
+ * 改文案、加作品、加經歷都喺呢度改；版面喺 src/app/[locale]/page.tsx。
+ */
+
+const email = "hi@deven.tw"
+
+const social = {
+  GitHub: {
+    name: "GitHub",
+    url: "https://github.com/deventw",
+    icon: <Icons.github className="size-full" />,
+    navbar: true,
+  },
+  X: {
+    name: "X",
+    url: "https://x.com/deven_tw",
+    icon: <Icons.x className="size-full" />,
+    navbar: true,
+  },
+  Email: {
+    name: "Email",
+    url: `mailto:${email}`,
+    icon: <Icons.email className="size-full" />,
+    navbar: true,
+  },
+}
+
+/** 作品：app 用 icon，網站用截圖 */
+type Work = {
+  title: string
+  kind: string
+  year: string
+  description: string
+  stack: string[]
+  href: string
+  icon?: string
+  image?: string
+  status?: string
+  links?: { label: string; href: string }[]
+}
+
+type Experience = {
+  period: string
+  title: string
+  org: string
+  href?: string
+  description: string
+}
+
 const en = {
-  name: "DevenTW",
-  slogan: "Think. Code. Build. Repeat.",
+  name: "Deven Kwong",
+  handle: "DevenTW",
   url: "https://deven.tw",
+  role: "Full-stack developer",
   location: "Hong Kong",
   locationLink: "https://maps.app.goo.gl/BNSJUVybj1jgwiY48",
-  description:
-    "Hello, I'm a full-stack developer based in Hong Kong!",
-  personalMessage:
-    "I hope to do something interesting and having some unforgettable memories.",
-  title: "Full-Stack Developer & Designer",
-  summary:
-    "",
-  workDescription:
-    "DevenTW is a full-stack developer based in Hong Kong with a passion for building innovative digital solutions. He has a knack for all things software development, from planning and designing all the way to solving real-life problems with code. When not coding, he loves photography, strength training, and exploring new technologies. Currently, he is working on various projects and continuously learning to stay at the forefront of technology.",
-  bio: [
-    {
-      year: "2022",
-      event: "Graduated with Bachelor's degree in Information Management"
-    },
-    {
-      year: "2022",
-      event: "Started working as a Frontend Programmer in the educational technology sector"
-    },
-    {
-      year: "2025",
-      event: "Moved to Analyst Programmer in custom software development"
-    },
-    {
-      year: "Present",
-      event: "Working as a full-stack developer, building innovative solutions"
-    }
-  ],
-  // avatarUrl: "/me.png",
   avatarUrl: "https://avatars.githubusercontent.com/u/63999575?v=4",
-  tweetId: "1547578458787631104",
-  skills: [
-    "HTML",
-    "CSS",
-    "TypeScript",
-    "React",
-    "React Native",
-    "Next.js",
-    "Node.js",
-    "Express",
-    "Hono",
-    "Python",
-    // "Django",
-    // "Flask",
-    "PostgreSQL",
-    // "Docker",
-    // "AWS",
-    // "Vercel",
-    "Git",
-    "Figma",
-    "REST APIs",
-    "Swift",
-    "SwiftUI",
-    "WordPress",
-  ],
-  interests: [
-    "Coding",
-    "Photography", 
-    "Strength Training",
-    "Travel",
-    "Music",
-    "Ramen🍜"
-  ],
-  navbar: [
-    {
-      href: "/",
-      icon: <Icons.me className="size-full" />,
-      label: "Blog",
-    },
-    // {
-    //   href: "https://camlife.cn",
-    //   icon: <Icons.aperture className="size-full" />,
-    //   label: "Plog",
-    // },
-  ],
-  contact: {
-    email: "contact@deven.tw",
-    tel: "+123456789",
-    social: {
-      Twitter: {
-        name: "X",
-        url: "https://twitter.com/deven_tw",
-        icon: <Icons.twitter className="size-full" />,
-        navbar: false,
-      },
-      Email: {
-        name: "Email",
-        url: "mailto: hi@deven.tw",
-        icon: <Icons.email className="size-full" />,
-        navbar: true,
-      },
-      GitHub: {
-        name: "GitHub",
-        url: "https://github.com/deventw",
-        icon: <Icons.github className="size-full" />,
-        navbar: true,
-      },
-    },
+  meta: {
+    title: "Deven Kwong — Full-stack developer in Hong Kong",
+    description:
+      "Full-stack developer in Hong Kong. I build web and iOS apps end to end, from the first sketch to the App Store.",
   },
+  hero: {
+    greeting: "Hi, I'm Deven.",
+    headline: ["I build web and mobile", "products, end to end."],
+    intro:
+      "Full-stack developer in Hong Kong. By day I build custom business software as an analyst programmer. On the side I run MMQM, a small studio where I make websites and ship my own apps.",
+    cta: "Get in touch",
+    secondary: "See my work",
+  },
+  about: [
+    "I started in front-end, building web and mobile apps for education platforms. Today I work across the whole stack: interfaces in React and SwiftUI, APIs in Node.js and Python, data in PostgreSQL, and the requirements and architecture that come before any of it.",
+    "I like small, well-made software: quick to load, calm to use and careful with people's data. Away from the keyboard I take photos, lift, travel, and look for good ramen.",
+  ],
   work: [
     {
-      company: "Custom Software Development",
-      href: "",
-      badges: [],
-      location: "Hong Kong",
-      title: "Analyst Programmer",
-      logoUrl: "",
-      start: "Aug 2025",
-      end: "Present",
-      description: "Develop custom business solutions and enterprise software systems, focusing on requirements analysis and system architecture",
+      title: "BUSROO",
+      kind: "iOS app",
+      year: "2026",
+      description:
+        "Real-time KMB and Citybus arrivals for Hong Kong, with Live Activities, widgets and a reminder that tells you exactly when to leave.",
+      stack: ["Swift", "Live Activities", "WidgetKit", "API"],
+      href: "https://busroo.mmqm.dev/",
+      icon: "/apps/busroo.png",
+      status: "Coming soon",
     },
     {
-      company: "Educational Technology",
-      href: "",
-      badges: [],
-      location: "Hong Kong",
-      title: "Frontend Programmer",
-      logoUrl: "",
-      start: "Aug 2022",
-      end: "Jan 2025",
-      description: "Built responsive web applications and mobile apps for educational platforms, collaborating with cross-functional teams",
-    },
-  ],
-  education: [
-    {
-      school: "National Taiwan University of Science and Technology",
-      href: "https://www.ntust.edu.tw",
-      degree: "Bachelor of Business Administration (Information Management)",
-      logoUrl: "/ntust.png",
-      start: "Sep 2020",
-      end: "Jun 2022",
-      description: "Have a wonderful two years",
+      title: "Yohaku",
+      kind: "iOS app",
+      year: "2025",
+      description:
+        "Thirty film-inspired frames that turn photos into prints. Every photo is processed on the device and never uploaded.",
+      stack: ["iOS", "On-device processing", "5 languages"],
+      href: "https://yohaku.mmqm.dev/",
+      icon: "/apps/yohaku.png",
     },
     {
-      school: "Community College of City University",
-      href: "https://www.uowchk.edu.hk/",
-      degree: "Information Systems Development",
-      logoUrl: "/uow.jpg",
-      start: "Sep 2018",
-      end: "Jun 2020",
-      description: "Exploring the field, advancing skills",
+      title: "Subscription Bird",
+      kind: "iOS app",
+      year: "2025",
+      description:
+        "A calm subscription tracker with insights, renewal reminders and four themes. Data stays on the phone.",
+      stack: ["iOS", "Local storage", "5 languages"],
+      href: "https://subscription-bird.mmqm.dev/",
+      icon: "/apps/subscription-bird.png",
     },
-  ],
-  projects: [
+    {
+      title: "mmqm.dev",
+      kind: "Website",
+      year: "2026",
+      description:
+        "My studio's website: six languages, every page pre-rendered for search, plus unlisted digital business cards behind a QR code.",
+      stack: ["Next.js", "TypeScript", "Cloudflare"],
+      href: "https://mmqm.dev/",
+    },
     {
       title: "Swing Fridge Pro",
-      href: "https://apps.apple.com/hk/app/swing-fridge-pro/id6670784659?l=en-GB",
-      dates: "Mar 2024 - Jan 2025",
-      active: true,
+      kind: "iOS app",
+      year: "2024",
       description:
-        "An efficient iOS app to manage your fridge, ensuring food freshness and reducing waste",
-      technologies: ["SwiftUI", "Core Data", "NFC", "Alamofire"],
-      links: [
-        {
-          type: "Website",
-          href: "https://bento.me/swingfridge",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/swingfridge.png",
-      video: "",
+        "Keeps track of what's in the fridge so food gets eaten before it expires. Tap an NFC tag to log items quickly.",
+      stack: ["SwiftUI", "Core Data", "NFC", "Alamofire"],
+      href: "https://apps.apple.com/hk/app/swing-fridge-pro/id6670784659",
+      image: "/work/swingfridge.jpg",
     },
     {
       title: "Astro Air Bento",
-      href: "https://blog.deven.tw",
-      dates: "Dec 2024 - Now",
-      active: true,
-      description: "Bento-styled, minimal, personal blog theme for Astro",
-      technologies: ["Astro", "React", "Typescript", "TailwindCSS"],
+      kind: "Open source",
+      year: "2024",
+      description: "A minimal, bento-style personal blog theme for Astro.",
+      stack: ["Astro", "React", "TypeScript", "Tailwind CSS"],
+      href: "https://github.com/deventw/astro-air-bento",
+      image: "/work/air-bento.jpg",
       links: [
-        {
-          type: "Website",
-          href: "https://astro-air-bento.netlify.app/en/",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/deventw/astro-air-bento",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "/air-bento.png",
-      video: "",
-    },
-  ],
-  awesome: [
-    {
-      title: "LLM Minimal AI Chat Demo",
-      dates: "Feb 2025",
-      location: "🌍",
-      description:
-        "A responsive React app using Mistral 7B via OpenRouter API for interactive AI conversations.",
-      image: "/cute-ai-chat.png",
-      mlh: "",
-      links: [
-        {
-          title: "Website",
-          type: "",
-          href: "https://material-ai-chat.vercel.app/",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          title: "Source",
-          href: "https://github.com/deventw/material-ai-chat",
-          icon: <Icons.github className="size-3" />,
-        },
+        { label: "Demo", href: "https://astro-air-bento.netlify.app/en/" },
+        { label: "Source", href: "https://github.com/deventw/astro-air-bento" },
       ],
     },
+  ] as Work[],
+  playground: [
     {
-      title: "Number Klotski Puzzle Game",
-      dates: "Dec 2024",
-      location: "🌍",
-      description:
-        "A fun and challenging puzzle by arrange numbered tiles in the correct order!",
-      image: "/number-klotski.jpeg",
-      mlh: "",
-      links: [
-        {
-          title: "Website",
-          type: "",
-          href: "https://number-klotski.netlify.app",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          title: "Source",
-          href: "https://github.com/deventw/number-klotski-app",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-    },
-  ],
-}
-
-const zh = {
-  name: "DevenTW",
-  slogan: "「一花一世界」",
-  url: "https://deven.tw",
-  location: "香港",
-  locationLink: "https://maps.app.goo.gl/BNSJUVybj1jgwiY48",
-  description: "你好，我是一名在香港的全端開發者！",
-  personalMessage: "希望能做一些有趣的事情，並留下一些難忘的回憶～",
-  title: "全端開發者 & 設計師",
-  summary:
-    "",
-  workDescription:
-    "DevenTW 是一名在香港的全端開發者，熱衷於構建創新的數位解決方案。他享受從規劃到部署的整個過程，也熱愛學習新技術。不寫程式的時候，他會去拍照、健身，或是探索最新的科技趨勢。",
-  bio: [
-    {
-      year: "2022",
-      event: "畢業於資訊管理學學士學位"
-    },
-    {
-      year: "2022",
-      event: "開始在教育科技領域擔任前端程式設計師"
-    },
-    {
+      title: "AI chat demo",
       year: "2025",
-      event: "轉至客製化軟體開發領域擔任分析程式設計師"
+      description: "A small React chat app talking to Mistral 7B through the OpenRouter API.",
+      image: "/work/ai-chat.jpg",
+      links: [
+        { label: "Demo", href: "https://material-ai-chat.vercel.app/" },
+        { label: "Source", href: "https://github.com/deventw/material-ai-chat" },
+      ],
     },
     {
-      year: "至今",
-      event: "從事全端開發工作，構建創新解決方案"
-    }
-  ],
-  // avatarUrl: "/me.png",
-  avatarUrl: "https://avatars.githubusercontent.com/u/63999575?v=4",
-  tweetId: en.tweetId,
-  skills: en.skills,
-  interests: [
-    "編程",
-    "攝影", 
-    "健身",
-    "旅行",
-    "音樂",
-    "拉麵🍜"
-  ],
-  navbar: [
-    {
-      href: "/",
-      icon: <Icons.me className="size-full" />,
-      label: "部落格",
+      title: "Number Klotski",
+      year: "2024",
+      description: "A sliding number puzzle for the browser: put the tiles back in order.",
+      image: "/work/klotski.jpg",
+      links: [
+        { label: "Play", href: "https://number-klotski.netlify.app" },
+        { label: "Source", href: "https://github.com/deventw/number-klotski-app" },
+      ],
     },
-    // {
-    //   href: "https://camlife.cn",
-    //   icon: <Icons.aperture className="size-full" />,
-    //   label: "影集",
-    // },
   ],
-  contact: {
-    email: en.contact.email,
-    tel: "+123456789",
-    social: {
-      Twitter: {
-        name: "X",
-        url: "https://twitter.com/deven_tw",
-        icon: <Icons.x className="size-full" />,
-        navbar: false,
-      },
-      Email: {
-        name: "郵件",
-        url: "mailto: hi@deven.tw",
-        icon: <Icons.email className="size-full" />,
-        navbar: true,
-      },
-      GitHub: {
-        name: "GitHub",
-        url: "https://github.com/deventw",
-        icon: <Icons.github className="size-full" />,
-        navbar: true,
-      },
-    },
-  },
-  work: [
+  experience: [
     {
-      company: "客製化軟體開發",
-      href: "",
-      badges: [],
-      location: "香港",
-      title: "分析程式員",
-      logoUrl: "",
-      start: "2025.08",
-      end: "至今",
-      description: "開發客製化商業解決方案和企業軟體系統，專注於需求分析和系統架構",
+      period: "Now",
+      title: "Founder",
+      org: "MMQM",
+      href: "https://mmqm.dev/",
+      description: "A small studio for websites, systems and apps, and where I ship my own products.",
     },
     {
-      company: "教育科技",
-      href: "",
-      badges: [],
-      location: "香港",
-      title: "前端開發工程師",
-      logoUrl: "",
-      start: "2022.08",
-      end: "2025.01",
-      description: "開發教育平台的響應式網頁和行動應用，團隊協作",
+      period: "Aug 2025 — Now",
+      title: "Analyst Programmer",
+      org: "Custom software development",
+      description: "Requirements analysis, system design and development for custom business and enterprise software.",
     },
-  ],
+    {
+      period: "Aug 2022 — Jan 2025",
+      title: "Frontend Programmer",
+      org: "Educational technology",
+      description: "Built responsive web apps and mobile apps for education platforms with a cross-functional team.",
+    },
+  ] as Experience[],
   education: [
     {
-      school: "國立臺灣科技大學",
+      period: "2020 — 2022",
+      title: "BBA, Information Management",
+      org: "National Taiwan University of Science and Technology",
       href: "https://www.ntust.edu.tw",
-      degree: "管理學學士 (資訊管理系)",
-      logoUrl: "/ntust.png",
-      start: "2020.09",
-      end: "2022.06",
-      description: "度過了美好的兩年",
+      description: "",
     },
     {
-      school: "香港城市大學專上學院",
+      period: "2018 — 2020",
+      title: "Information Systems Development",
+      org: "Community College of City University",
       href: "https://www.uowchk.edu.hk/",
-      degree: "資訊系統開發",
-      logoUrl: "/uow.jpg",
-      start: "2018.09",
-      end: "2020.06",
-      description: "領域探索，提升技能",
+      description: "",
     },
+  ] as Experience[],
+  skills: [
+    { group: "Frontend", items: ["TypeScript", "React", "Next.js", "HTML & CSS", "Tailwind CSS"] },
+    { group: "Mobile", items: ["Swift", "SwiftUI", "React Native"] },
+    { group: "Backend", items: ["Node.js", "Express", "Hono", "Python", "PostgreSQL", "REST APIs"] },
+    { group: "Tools", items: ["Git", "Figma", "WordPress"] },
   ],
-  projects: [
-    {
-      title: "叫醒冰箱 Pro",
-      href: "https://apps.apple.com/hk/app/swing-fridge-pro/id6670784659?l=en-GB",
-      dates: "2024.03 - 2025.01",
-      active: true,
-      description:
-        "一個簡約設計的 iOS APP，管理你的冰箱，確保食物新鮮，減少浪費",
-      technologies: ["SwiftUI", "Core Data", "NFC", "Alamofire"],
-      links: [
-        {
-          type: "Website",
-          href: "https://bento.me/swingfridge",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/swingfridge.png",
-      video: "",
-    },
-    {
-      title: "Astro Air Bento",
-      href: "https://blog.deven.tw",
-      dates: "2024.12 - Now",
-      active: true,
-      description: "Bento 簡約風格 - Astro 部落格主題",
-      technologies: ["Astro", "React", "Typescript", "TailwindCSS"],
-      links: en.projects[1]?.links,
-      image: "/air-bento.png",
-      video: "",
-    },
-  ],
-  awesome: [
-    {
-      title: "LLM AI 聊天示範",
-      dates: "2025.02",
-      location: "🌍",
-      description:
-        "一個使用 Mistral 7B 和 OpenRouter API 的 React 聊天應用程式。",
-      image: "/cute-ai-chat.png",
-      mlh: "",
-      links: [
-        {
-          title: "Website",
-          type: "",
-          href: "https://material-ai-chat.vercel.app/",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          title: "Source",
-          href: "https://github.com/deventw/material-ai-chat",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-    },
-    {
-      title: "數字華容道",
-      dates: "2024.12",
-      location: "🌍",
-      description:
-        "一個有趣且具挑戰性的謎題，透過將編號的方塊按正確的順序排列！",
-      image: "/number-klotski.jpeg",
-      mlh: "",
-      links: [
-        {
-          title: "Website",
-          type: "",
-          href: "https://number-klotski.netlify.app",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          title: "Source",
-          href: "https://github.com/deventw/number-klotski-app",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-    },
-  ],
-}
-
-export const getLocaleData = (locale: string) => {
-  return locale === "zh" ? zh : en
+  contact: {
+    email,
+    title: "Let's build something.",
+    body: "Have a project, a role or just a question? Email is the best way to reach me. I read everything and reply as soon as I can.",
+    social,
+  },
+  navbar: [] as { href: string; icon: React.ReactNode; label: string }[],
 }
 
 export type LocaleData = typeof en
+
+const zh: LocaleData = {
+  ...en,
+  name: "Deven Kwong",
+  role: "全端開發者",
+  location: "香港",
+  meta: {
+    title: "Deven Kwong — 香港全端開發者",
+    description: "香港的全端開發者。從第一張草圖到上架 App Store，網頁和 iOS App 都一手包辦。",
+  },
+  hero: {
+    greeting: "你好，我是 Deven。",
+    headline: ["從構想到上線，", "一手做好網頁和 App。"],
+    intro:
+      "香港的全端開發者。白天以分析程式員的身分開發企業客製化系統；工作之外，我經營小型工作室 MMQM，做網站，也推出自己的 App。",
+    cta: "聯絡我",
+    secondary: "看看作品",
+  },
+  about: [
+    "我從前端起步，為教育平台開發網頁和手機 App。現在橫跨整個技術棧：用 React 和 SwiftUI 做介面，用 Node.js 和 Python 寫 API，用 PostgreSQL 管理資料，也負責動工之前的需求分析和系統架構。",
+    "我喜歡小而精緻的軟體：載入快、用起來安靜、尊重使用者的資料。離開鍵盤的時候，我會去拍照、健身、旅行，順便找一碗好吃的拉麵。",
+  ],
+  work: [
+    {
+      ...en.work[0]!,
+      kind: "iOS App",
+      description: "香港九巴、城巴即時到站時間，有即時動態、主畫面小工具，還會提醒你什麼時候該出門。",
+      status: "即將推出",
+    },
+    {
+      ...en.work[1]!,
+      kind: "iOS App",
+      description: "30 款靈感來自底片攝影的邊框，把照片變成作品。所有照片都在裝置上處理，不會上傳。",
+      stack: ["iOS", "裝置端處理", "五種語言"],
+    },
+    {
+      ...en.work[2]!,
+      kind: "iOS App",
+      description: "安靜好用的訂閱管理 App，有總覽、續訂提醒和四種主題，資料只留在手機裡。",
+      stack: ["iOS", "本機儲存", "五種語言"],
+    },
+    {
+      ...en.work[3]!,
+      kind: "網站",
+      description: "我工作室的網站：六種語言、每一頁都預先產生以利搜尋，另外還有藏在二維碼後面的電子名片。",
+    },
+    {
+      ...en.work[4]!,
+      title: "叫醒冰箱 Pro",
+      kind: "iOS App",
+      description: "記錄冰箱裡有什麼，讓食物在過期前被吃掉。用 NFC 標籤一碰就能快速記錄。",
+    },
+    {
+      ...en.work[5]!,
+      kind: "開源專案",
+      description: "Bento 風格的極簡 Astro 部落格主題。",
+      links: [
+        { label: "示範", href: "https://astro-air-bento.netlify.app/" },
+        { label: "原始碼", href: "https://github.com/deventw/astro-air-bento" },
+      ],
+    },
+  ],
+  playground: [
+    {
+      ...en.playground[0]!,
+      title: "AI 聊天示範",
+      description: "一個小型 React 聊天 App，透過 OpenRouter API 和 Mistral 7B 對話。",
+      links: [
+        { label: "示範", href: "https://material-ai-chat.vercel.app/" },
+        { label: "原始碼", href: "https://github.com/deventw/material-ai-chat" },
+      ],
+    },
+    {
+      ...en.playground[1]!,
+      title: "數字華容道",
+      description: "在瀏覽器玩的數字滑塊拼圖：把方塊排回正確的順序。",
+      links: [
+        { label: "試玩", href: "https://number-klotski.netlify.app" },
+        { label: "原始碼", href: "https://github.com/deventw/number-klotski-app" },
+      ],
+    },
+  ],
+  experience: [
+    {
+      ...en.experience[0]!,
+      period: "現在",
+      title: "創辦人",
+      description: "做網站、系統和 App 的小型工作室，也是我推出自己產品的地方。",
+    },
+    {
+      ...en.experience[1]!,
+      period: "2025.08 — 現在",
+      title: "分析程式員",
+      org: "企業客製化軟體開發",
+      description: "負責企業客製化系統的需求分析、系統設計與開發。",
+    },
+    {
+      ...en.experience[2]!,
+      period: "2022.08 — 2025.01",
+      title: "前端程式員",
+      org: "教育科技",
+      description: "與跨職能團隊合作，為教育平台開發響應式網頁和手機 App。",
+    },
+  ],
+  education: [
+    { ...en.education[0]!, title: "管理學學士（資訊管理系）", org: "國立臺灣科技大學" },
+    { ...en.education[1]!, title: "資訊系統開發", org: "香港城市大學專上學院" },
+  ],
+  skills: [
+    { group: "前端", items: en.skills[0]!.items },
+    { group: "行動裝置", items: en.skills[1]!.items },
+    { group: "後端", items: en.skills[2]!.items },
+    { group: "工具", items: en.skills[3]!.items },
+  ],
+  contact: {
+    ...en.contact,
+    title: "一起做點什麼吧。",
+    body: "有專案、職缺，或只是想問問題？寄信給我最快。每封信我都會看，也會盡快回覆。",
+    social: { ...social, Email: { ...social.Email, name: "電郵" } },
+  },
+}
+
+export const getLocaleData = (locale: string): LocaleData => {
+  return locale === "zh" ? zh : en
+}
