@@ -193,10 +193,14 @@ const en = {
     },
   ] as Experience[],
   skills: [
-    { group: "Frontend", items: ["TypeScript", "React", "Next.js", "HTML & CSS", "Tailwind CSS"] },
-    { group: "Mobile", items: ["Swift", "SwiftUI", "React Native"] },
-    { group: "Backend", items: ["Node.js", "Express", "Hono", "Python", "PostgreSQL", "REST APIs"] },
-    { group: "Tools", items: ["Git", "Figma", "WordPress"] },
+    {
+      group: "Frontend",
+      items: ["TypeScript", "React", "Next.js", "TanStack Start", "Astro", "Vite", "HTML & CSS", "Tailwind CSS"],
+    },
+    { group: "Mobile", items: ["Swift", "SwiftUI", "Core Data", "NFC", "Flutter", "React Native"] },
+    { group: "Backend", items: ["Node.js", "Bun", "Express", "Hono", "Python", "PostgreSQL", "REST APIs"] },
+    { group: "AI", items: ["LLM API integration", "OpenRouter", "AI-assisted development", "Claude Code"] },
+    { group: "Cloud & tools", items: ["Cloudflare Workers & Pages", "Vercel", "Git", "Figma", "WordPress"] },
   ],
   contact: {
     email,
@@ -314,7 +318,8 @@ const zh: LocaleData = {
     { group: "前端", items: en.skills[0]!.items },
     { group: "行動裝置", items: en.skills[1]!.items },
     { group: "後端", items: en.skills[2]!.items },
-    { group: "工具", items: en.skills[3]!.items },
+    { group: "AI", items: ["LLM API 串接", "OpenRouter", "AI 輔助開發", "Claude Code"] },
+    { group: "雲端與工具", items: en.skills[4]!.items },
   ],
   contact: {
     ...en.contact,
