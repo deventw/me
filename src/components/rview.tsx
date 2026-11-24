@@ -70,13 +70,13 @@ export function RView({ className }: RViewProps) {
  
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
               <div 
-                onClick={() => window.open('https://www.youtube.com/watch?v=fzfLHt0jImU', '_blank')}
+                onClick={() => window.open('https://www.youtube.com/watch?v=HhImi76mr5I', '_blank')}
                 className="cursor-pointer"
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
-                    window.open('https://www.youtube.com/watch?v=fzfLHt0jImU', '_blank')
+                    window.open('https://www.youtube.com/watch?v=HhImi76mr5I', '_blank')
                   }
                 }}
               >
@@ -107,13 +107,13 @@ export function RView({ className }: RViewProps) {
                 {/* Center R Letter */}
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
                   <div
-                    onClick={() => window.open('https://www.youtube.com/watch?v=fzfLHt0jImU', '_blank')}
+                    onClick={() => window.open('https://www.youtube.com/watch?v=HhImi76mr5I', '_blank')}
                     className="cursor-pointer"
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter' || e.key === ' ') {
-                        window.open('https://www.youtube.com/watch?v=fzfLHt0jImU', '_blank')
+                        window.open('https://www.youtube.com/watch?v=HhImi76mr5I', '_blank')
                       }
                     }}
                   >
