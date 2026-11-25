@@ -330,6 +330,124 @@ const zh: LocaleData = {
   },
 }
 
+/** 韓文：用해요체，同 MMQM 網站嘅韓文語氣一致 */
+const ko: LocaleData = {
+  ...en,
+  name: "Deven Kwong",
+  role: "풀스택 개발자",
+  location: "홍콩",
+  meta: {
+    title: "Deven Kwong — 홍콩의 풀스택 개발자",
+    description: "홍콩의 풀스택 개발자. 첫 스케치부터 App Store 출시까지 웹과 iOS 앱을 직접 만들어요.",
+  },
+  hero: {
+    greeting: "안녕하세요, Deven이에요.",
+    headline: ["웹과 모바일 제품을", "처음부터 끝까지 만들어요."],
+    intro:
+      "홍콩에서 일하는 풀스택 개발자예요. 낮에는 분석 프로그래머로 기업 맞춤형 소프트웨어를 만들고, 일 밖에서는 제 iOS 앱을 직접 디자인하고 출시해요.",
+    cta: "연락하기",
+    secondary: "작업 보기",
+  },
+  about: [
+    "프런트엔드에서 시작해 교육 플랫폼의 웹과 모바일 앱을 만들었어요. 지금은 스택 전체를 다뤄요. React와 SwiftUI로 화면을, Node.js와 Python으로 API를, PostgreSQL로 데이터를 다루고, 만들기 전에 필요한 요구사항 분석과 시스템 설계도 맡아요.",
+    "작고 잘 만든 소프트웨어를 좋아해요. 빠르게 열리고, 차분하게 쓸 수 있고, 사용자의 데이터를 소중히 다루는 것이요. 키보드를 떠나면 사진을 찍고, 운동하고, 여행하고, 맛있는 라멘을 찾아다녀요.",
+  ],
+  work: [
+    {
+      ...en.work[0]!,
+      kind: "iOS 앱",
+      description: "홍콩 KMB·Citybus 실시간 도착 정보. 실시간 현황과 위젯, 그리고 언제 나가면 되는지 알려 주는 알림까지.",
+      status: "출시 예정",
+    },
+    {
+      ...en.work[1]!,
+      kind: "iOS 앱",
+      description: "필름 사진에서 영감을 받은 30가지 프레임으로 사진을 작품으로 만들어요. 모든 사진은 기기 안에서 처리되고 업로드되지 않아요.",
+      stack: ["Flutter", "기기 내 처리", "5개 언어"],
+    },
+    {
+      ...en.work[2]!,
+      kind: "iOS 앱",
+      description: "개요, 갱신 알림, 네 가지 테마를 갖춘 차분한 구독 관리 앱. 데이터는 휴대폰에만 남아요.",
+      stack: ["iOS", "로컬 저장", "5개 언어"],
+    },
+    {
+      ...en.work[3]!,
+      kind: "웹사이트",
+      description: "6개 언어로 된 기업 웹사이트. 검색을 위해 모든 페이지를 미리 생성하고, QR 코드 뒤에 숨은 디지털 명함도 있어요.",
+    },
+    {
+      ...en.work[4]!,
+      kind: "iOS 앱",
+      description: "냉장고에 무엇이 있는지 기록해서 유통기한 전에 먹을 수 있게 도와줘요. NFC 태그를 대면 바로 기록돼요.",
+    },
+    {
+      ...en.work[5]!,
+      kind: "오픈 소스",
+      description: "벤토 스타일의 미니멀한 Astro 블로그 테마예요.",
+      links: [
+        { label: "데모", href: "https://astro-air-bento.netlify.app/" },
+        { label: "소스", href: "https://github.com/deventw/astro-air-bento" },
+      ],
+    },
+  ],
+  playground: [
+    {
+      ...en.playground[0]!,
+      title: "AI 채팅 데모",
+      description: "OpenRouter API로 Mistral 7B와 대화하는 작은 React 채팅 앱이에요.",
+      links: [
+        { label: "데모", href: "https://material-ai-chat.vercel.app/" },
+        { label: "소스", href: "https://github.com/deventw/material-ai-chat" },
+      ],
+    },
+    {
+      ...en.playground[1]!,
+      title: "숫자 슬라이드 퍼즐",
+      description: "브라우저에서 즐기는 숫자 슬라이드 퍼즐. 타일을 올바른 순서로 되돌려 보세요.",
+      links: [
+        { label: "플레이", href: "https://number-klotski.netlify.app" },
+        { label: "소스", href: "https://github.com/deventw/number-klotski-app" },
+      ],
+    },
+  ],
+  experience: [
+    {
+      ...en.experience[0]!,
+      period: "2025.08 — 현재",
+      title: "분석 프로그래머",
+      org: "기업 맞춤형 소프트웨어 개발",
+      description: "기업 맞춤형 시스템의 요구사항 분석, 시스템 설계, 개발을 맡고 있어요.",
+    },
+    {
+      ...en.experience[1]!,
+      period: "2022.08 — 2025.01",
+      title: "프런트엔드 프로그래머",
+      org: "에듀테크",
+      description: "여러 직군의 팀과 함께 교육 플랫폼의 반응형 웹과 모바일 앱을 만들었어요.",
+    },
+  ],
+  education: [
+    { ...en.education[0]!, title: "경영학 학사 (정보관리학과)", org: "국립 대만과학기술대학교" },
+    { ...en.education[1]!, title: "정보시스템 개발", org: "홍콩시티대학교 커뮤니티 칼리지" },
+  ],
+  skills: [
+    { group: "프로그래밍 언어", items: en.skills[0]!.items },
+    { group: "웹", items: en.skills[1]!.items },
+    { group: "모바일", items: en.skills[2]!.items },
+    { group: "백엔드와 데이터", items: en.skills[3]!.items },
+    { group: "AI 연동", items: en.skills[4]!.items },
+    { group: "AI 개발 도구", items: en.skills[5]!.items },
+    { group: "클라우드와 도구", items: en.skills[6]!.items },
+  ],
+  contact: {
+    ...en.contact,
+    title: "함께 무언가를 만들어요.",
+    body: "프로젝트, 채용, 아니면 그냥 궁금한 점이 있나요? 이메일이 가장 빨라요. 모든 메일을 읽고 최대한 빨리 답장할게요.",
+    social: { ...social, Email: { ...social.Email, name: "이메일" } },
+  },
+}
+
 export const getLocaleData = (locale: string): LocaleData => {
-  return locale === "zh" ? zh : en
+  return locale === "zh" ? zh : locale === "ko" ? ko : en
 }

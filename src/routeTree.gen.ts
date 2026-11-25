@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as KoIndexRouteImport } from './routes/ko/index'
 import { Route as ZhIndexRouteImport } from './routes/zh/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KoIndexRoute = KoIndexRouteImport.update({
+  id: '/ko/',
+  path: '/ko/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ZhIndexRoute = ZhIndexRouteImport.update({
@@ -25,27 +31,31 @@ const ZhIndexRoute = ZhIndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ko/': typeof KoIndexRoute
   '/zh/': typeof ZhIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ko': typeof KoIndexRoute
   '/zh': typeof ZhIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ko/': typeof KoIndexRoute
   '/zh/': typeof ZhIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/zh/'
+  fullPaths: '/' | '/ko/' | '/zh/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/zh'
-  id: '__root__' | '/' | '/zh/'
+  to: '/' | '/ko' | '/zh'
+  id: '__root__' | '/' | '/ko/' | '/zh/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  KoIndexRoute: typeof KoIndexRoute
   ZhIndexRoute: typeof ZhIndexRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ko/': {
+      id: '/ko/'
+      path: '/ko'
+      fullPath: '/ko/'
+      preLoaderRoute: typeof KoIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/zh/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  KoIndexRoute: KoIndexRoute,
   ZhIndexRoute: ZhIndexRoute,
 }
 export const routeTree = rootRouteImport

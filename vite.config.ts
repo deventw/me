@@ -2,7 +2,7 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite"
 import viteReact from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 
-// 純靜態網站：build 時預先產生 / 同 /zh/ 嘅 HTML，部署去 Cloudflare Pages，唔使伺服器
+// 純靜態網站：build 時預先產生 /、/zh/、/ko/ 嘅 HTML，部署去 Cloudflare Pages，唔使伺服器
 export default defineConfig({
   resolve: {
     tsconfigPaths: true,
@@ -14,7 +14,7 @@ export default defineConfig({
         crawlLinks: true,
         failOnError: true,
       },
-      pages: [{ path: "/" }, { path: "/zh/" }],
+      pages: [{ path: "/" }, { path: "/zh/" }, { path: "/ko/" }],
       sitemap: {
         enabled: true,
         host: "https://deven.tw",

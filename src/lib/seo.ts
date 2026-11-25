@@ -1,5 +1,5 @@
 import { getLocaleData } from "~/config"
-import { localePath, type Locale } from "~/lib/i18n"
+import { htmlLang, localePath, locales, type Locale } from "~/lib/i18n"
 
 /** 每個語言版本嘅 <head>：標題、描述、canonical、hreflang、分享預覽 */
 export function seoHead(locale: Locale) {
@@ -14,7 +14,7 @@ export function seoHead(locale: Locale) {
       { property: "og:description", content: data.meta.description },
       { property: "og:url", content: url },
       { property: "og:site_name", content: data.name },
-      { property: "og:locale", content: locale === "zh" ? "zh_TW" : "en_US" },
+      { property: "og:locale", content: { en: "en_US", zh: "zh_TW", ko: "ko_KR" }[locale] },
       { property: "og:image", content: `${data.url}/og.png` },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
@@ -24,8 +24,7 @@ export function seoHead(locale: Locale) {
     ],
     links: [
       { rel: "canonical", href: url },
-      { rel: "alternate", hrefLang: "en", href: data.url + localePath.en },
-      { rel: "alternate", hrefLang: "zh-Hant", href: data.url + localePath.zh },
+      ...locales.map((l) => ({ rel: "alternate", hrefLang: htmlLang[l], href: data.url + localePath[l] })),
       { rel: "alternate", hrefLang: "x-default", href: data.url + localePath.en },
     ],
   }
