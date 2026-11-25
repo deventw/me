@@ -20,7 +20,6 @@ export function seoHead(locale: Locale) {
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: data.meta.title },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:creator", content: "@deven_tw" },
     ],
     links: [
       { rel: "canonical", href: url },

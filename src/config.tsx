@@ -14,12 +14,6 @@ const social = {
     icon: <Icons.github className="size-full" />,
     navbar: true,
   },
-  X: {
-    name: "X",
-    url: "https://x.com/deven_tw",
-    icon: <Icons.x className="size-full" />,
-    navbar: true,
-  },
   Email: {
     name: "Email",
     url: `mailto:${email}`,
