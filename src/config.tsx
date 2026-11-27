@@ -82,6 +82,16 @@ const en = {
       status: "Coming soon",
     },
     {
+      title: "Yado Stay",
+      kind: "Web app",
+      year: "2026",
+      description:
+        "An operations system for guesthouses and small hotels: bookings, check-in and check-out, housekeeping and staff in one place. Checking a guest out sends a cleaning task straight to the staff app, and everything is large and clear so older hosts can use it with ease.",
+      stack: ["React", "Hono", "PostgreSQL", "Drizzle", "Docker"],
+      href: "https://yado-stay.mmqm.dev/",
+      icon: "/apps/yado-stay.png",
+    },
+    {
       title: "Yohaku",
       kind: "iOS app",
       year: "2025",
@@ -236,29 +246,34 @@ const zh: LocaleData = {
     },
     {
       ...en.work[1]!,
+      kind: "網頁系統",
+      description: "給民宿和小型旅館的營運系統：訂房、入住退房、房務清潔和員工管理集中在一處。辦理退房後，清潔任務會自動送到員工手機；字大、按鈕清楚，年長的房東也能輕鬆使用。",
+    },
+    {
+      ...en.work[2]!,
       kind: "iOS App",
       description: "30 款靈感來自底片攝影的邊框，把照片變成作品。所有照片都在裝置上處理，不會上傳。",
       stack: ["Flutter", "裝置端處理", "五種語言"],
     },
     {
-      ...en.work[2]!,
+      ...en.work[3]!,
       kind: "iOS App",
       description: "安靜好用的訂閱管理 App，有總覽、續訂提醒和四種主題，資料只留在手機裡。",
       stack: ["iOS", "本機儲存", "五種語言"],
     },
     {
-      ...en.work[3]!,
+      ...en.work[4]!,
       kind: "網站",
       description: "六種語言的企業網站：每一頁都預先產生以利搜尋，另外還有藏在二維碼後面的電子名片。",
     },
     {
-      ...en.work[4]!,
+      ...en.work[5]!,
       title: "叫醒冰箱 Pro",
       kind: "iOS App",
       description: "記錄冰箱裡有什麼，讓食物在過期前被吃掉。用 NFC 標籤一碰就能快速記錄。",
     },
     {
-      ...en.work[5]!,
+      ...en.work[6]!,
       kind: "開源專案",
       description: "Bento 風格的極簡 Astro 部落格主題。",
       links: [
@@ -355,28 +370,33 @@ const ko: LocaleData = {
     },
     {
       ...en.work[1]!,
+      kind: "웹 앱",
+      description: "게스트하우스·소형 호텔 운영 시스템. 예약, 입실·퇴실, 객실 청소, 직원 관리를 한곳에서 해요. 퇴실 처리를 하면 청소 작업이 직원 앱으로 바로 전달되고, 나이 드신 호스트도 쉽게 쓰도록 크고 분명하게 만들었어요.",
+    },
+    {
+      ...en.work[2]!,
       kind: "iOS 앱",
       description: "필름 사진에서 영감을 받은 30가지 프레임으로 사진을 작품으로 만들어요. 모든 사진은 기기 안에서 처리되고 업로드되지 않아요.",
       stack: ["Flutter", "기기 내 처리", "5개 언어"],
     },
     {
-      ...en.work[2]!,
+      ...en.work[3]!,
       kind: "iOS 앱",
       description: "개요, 갱신 알림, 네 가지 테마를 갖춘 차분한 구독 관리 앱. 데이터는 휴대폰에만 남아요.",
       stack: ["iOS", "로컬 저장", "5개 언어"],
     },
     {
-      ...en.work[3]!,
+      ...en.work[4]!,
       kind: "웹사이트",
       description: "6개 언어로 된 기업 웹사이트. 검색을 위해 모든 페이지를 미리 생성하고, QR 코드 뒤에 숨은 디지털 명함도 있어요.",
     },
     {
-      ...en.work[4]!,
+      ...en.work[5]!,
       kind: "iOS 앱",
       description: "냉장고에 무엇이 있는지 기록해서 유통기한 전에 먹을 수 있게 도와줘요. NFC 태그를 대면 바로 기록돼요.",
     },
     {
-      ...en.work[5]!,
+      ...en.work[6]!,
       kind: "오픈 소스",
       description: "벤토 스타일의 미니멀한 Astro 블로그 테마예요.",
       links: [
